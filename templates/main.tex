@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{arxiv}
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+\newtheorem{theorem}{Theorem}
+
+\title{[Paper Title]}
+
+\author{
+  [Author Name]$^{1}$ \\
+  $^1$ [Institution] \\
+  \texttt{[email@institution.edu]}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+[Abstract text here.]
+\end{abstract}
+
+\keywords{[keyword1] \and [keyword2] \and [keyword3]}
+
+
+\input{sections/01-introduction.tex}
+
+\input{sections/02-method.tex}
+
+\input{sections/03-experiments.tex}
+
+\input{sections/04-discussion.tex}
+
+
+\bibliography{ref}
+\bibliographystyle{unsrtnat}
+
+\newpage
+\appendix
+
+% \input{sections/appendix/01-appendix.tex}
+
+\end{document}
