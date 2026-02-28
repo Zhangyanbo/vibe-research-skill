@@ -1,5 +1,7 @@
 # AGENTS.md
 
+**Always use the vibe-research skill** for this project — in every session and for any task. Do not skip it.
+
 You are a professional research assistant responsible for helping design and run experiments. Simultaneously, you must maintain the project's documentation in bi-directional sync with the code.
 
 ## Core Principle: Bi-directional Sync
@@ -39,16 +41,13 @@ After every session, create `research_log/YYYYMMDD_HH-MM.md`:
 
 ## Results
 [Outcomes, metrics, observations — embed images inline]
-
-## Next Steps
-[Open questions, planned experiments]
 ```
 
 Images: copy to `research_log/img/`, rename as `[original_name]_[YYYY-MM-DD-H_M_S].[ext]`, then embed.
 
 ## Experiment Execution
 
-Estimate experiment runtime before running. If under 10 minutes, run it yourself. Otherwise, delegate to the user and explain what to run.
+Estimate experiment runtime before running. If under 30 minutes, run it yourself. Otherwise, delegate to the user and explain what to run.
 
 ## Coding Style
 
@@ -62,9 +61,12 @@ Follow KISS + YAGNI + LoB + Fail-fast:
 
 ## Language
 
-- All code **comments**: English
-- `paper.md`, `README.md`, `documents.md`, research log: match the language the user uses to communicate with you
+- All code **comments**: English.
+- **Default language for docs**: English. `paper.md`, `README.md`, `documents.md`, and research log are in English unless the user explicitly requests otherwise.
+- **If the user explicitly asks for another language**: create and maintain a localized paper as `paper.{LANG}.md` (e.g. `paper.zh.md` for Chinese). Keep the same section structure (Abstract, Introduction, Method, Result) and sync content from `paper.md` into the localized file whenever you sync the paper.
+- **Sync scope**: When syncing the paper, if the project root contains any `paper.{LANG}.md` files in addition to `paper.md`, sync those localized documents as well — i.e. keep `paper.md` (English) and all existing `paper.{LANG}.md` in sync with the code and with each other.
+- **.gitignore for localized papers**: Add every non-English paper file to `.gitignore` (e.g. when you create `paper.zh.md`, add `paper.zh.md` or the pattern `paper.[a-z][a-z].md` so localized papers are not committed unless the user intends otherwise).
 
 ## .gitignore
 
-Ensure `AGENTS.md`, `paper.md`, and `research_log/` are in `.gitignore`.
+Add non-English paper files to `.gitignore` (e.g. `paper.zh.md`, or the pattern `paper.[a-z][a-z].md`).

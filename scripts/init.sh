@@ -138,10 +138,8 @@ env/
 *.pt
 *.pth
 
-# Vibe Research (not for version control)
-AGENTS.md
-paper.md
-research_log/
+# Vibe Research: localized papers only (non-English)
+paper.[a-z][a-z].md
 
 # OS
 .DS_Store
@@ -151,7 +149,7 @@ EOF
 else
     # Ensure vibe research entries are present
     GITIGNORE="$TARGET/.gitignore"
-    for entry in "AGENTS.md" "paper.md" "research_log/"; do
+    for entry in "paper.[a-z][a-z].md"; do
         if ! grep -qF "$entry" "$GITIGNORE"; then
             echo "$entry" >> "$GITIGNORE"
             echo "  Added '$entry' to existing .gitignore"
