@@ -1,6 +1,6 @@
 # Vibe Research
 
-A Cursor skill for setting up and maintaining **Vibe Research** projects with bi-directional sync between experimental code and a shadow academic paper (`paper.md`).
+An Agent skill for setting up and maintaining **Vibe Research** projects with bi-directional sync between experimental code and a shadow academic paper (`paper.md`).
 
 For the original post introducing this workflow, see [this thread](https://x.com/YanboZhang3/status/2017365847589695530).
 
