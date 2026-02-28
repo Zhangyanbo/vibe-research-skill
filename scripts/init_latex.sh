@@ -6,7 +6,7 @@
 set -e
 
 SKILL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-TEMPLATES="$SKILL_DIR/templates"
+TEMPLATES="$SKILL_DIR/resources/templates"
 TARGET="$(pwd)"
 LATEX_DIR="$TARGET/latex"
 
