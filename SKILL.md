@@ -1,11 +1,27 @@
 ---
 name: vibe-research
-description: Set up and maintain a Vibe Research project with bi-directional sync between experimental code and paper.md. Use when starting a research project, managing experimental code, maintaining research documentation, creating academic papers, writing research logs, or when the user mentions vibe research, paper sync, research log, experiment tracking, or bi-directional sync between code and paper.
+description: Set up and maintain a Vibe Research project with bi-directional sync between experimental code and paper.md. Use when starting a research project, managing experimental code, maintaining research documentation, creating academic papers, writing research logs, migrating an existing project to Vibe Research structure, or when the user mentions vibe research, paper sync, research log, experiment tracking, project migration, or bi-directional sync between code and paper.
 ---
 
 # Vibe Research
 
 Vibe Research treats the AI agent as a "talented but untrustworthy remote research team." The human researcher sets direction and reviews results through a compressed documentation interface. The soul of the system is **bi-directional sync**: code and `paper.md` are always mirrors of each other at the methodological level.
+
+## Migrating an Existing Project
+
+When the user asks to convert an existing project into a Vibe Research structure:
+
+1. **Understand the project** — if the user hasn't explained the experiment flow, goal, and result locations, ask before touching any files.
+2. **Run the init script** (idempotent — safe on existing directories).
+3. **Move source code → `src/`**, existing results → `results/`.
+4. **Update all path references** in code to match the new layout.
+5. **Smoke test** — run with minimal config; no data corruption; delete temp files; estimate runtime first (max 10 min).
+6. **Write `documents.md`** from code reading; one-way sync (code → docs).
+7. **Populate `paper.md` and `README.md`** based on current state.
+
+See [reference/migrate.md](reference/migrate.md) for the full checklist and detailed guidance.
+
+---
 
 ## Project Initialization
 
