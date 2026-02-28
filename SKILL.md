@@ -65,6 +65,19 @@ Key constraints:
 
 See [reference/latex.md](reference/latex.md) for structure, section mapping, and `math_commands.tex` shorthands.
 
+## Writing Into the Paper
+
+When the user provides chat logs, emails, or notes and asks to incorporate them into the paper, apply these rules:
+
+- **Filter first**: only include content the user explicitly affirmed; do not promote AI suggestions the user never endorsed.
+- **No copy-paste**: always rewrite source material as coherent academic prose.
+- **Read before writing**: understand the full paper structure before deciding where new content goes; a single point may need to appear in multiple places.
+- **Academic style**: no bullet points unless requested; use subsections sparingly.
+- **Role boundaries**: do not write Discussion unsolicited; do not editorialize on behalf of the user.
+- **Compile after every edit**: fix any LaTeX errors before moving on.
+
+See [reference/writing.md](reference/writing.md) for full guidance.
+
 ## Coding Style
 
 Research code prioritizes readability over abstraction:
