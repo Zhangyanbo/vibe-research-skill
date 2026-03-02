@@ -7,46 +7,22 @@ description: Set up and maintain a Vibe Research project with bi-directional syn
 
 Vibe Research treats the AI agent as a "talented but untrustworthy remote research team." The human researcher sets direction and reviews results through a compressed documentation interface. The soul of the system is **bi-directional sync**: code, `paper.md`, and `doc/` are always mirrors of each other.
 
-## Migrating an Existing Project
-
-### Full migration (no existing VR structure)
-
-1. **Understand the project** — if the user hasn't explained the experiment flow, goal, and result locations, ask before touching any files.
-2. **Run the init script** (idempotent — safe on existing directories).
-3. **Move source code → `src/`**, existing results → `results/`.
-4. **Update all path references** in code to match the new layout.
-5. **Smoke test** — run with minimal config; no data corruption; delete temp files; estimate runtime first (max 10 min).
-6. **Populate `doc/`** from code reading (see [Document Maintenance](#document-maintenance) below).
-7. **Populate `paper.md` and `README.md`** based on current state.
-
-### Partial migration (some VR structure already exists)
-
-When a project has **some** VR structure but is incomplete or drifted out of sync:
-
-1. **Audit every component** — classify each as conforming / stale / non-conforming / missing. Present the audit table to the user.
-2. **Generate a plan grouped by risk** (safe → moderate → caution). Get user approval.
-3. **Execute incrementally** — create missing structure first, then move files, then refresh stale docs, then restructure non-conforming files. Verify after each step.
-4. **Verify sync state** — confirm `paper.md`, `doc/`, `README.md`, and code are all in sync.
-
-**Key safety rules**: never overwrite meaningful content without showing a diff; use `git mv`; back up before restructuring; merge rather than replace files that have project-specific customizations.
-
-See [reference/migrate.md](reference/migrate.md) for full migration and [reference/partial-migrate.md](reference/partial-migrate.md) for partial migration.
-
----
-
 ## Project Initialization
-
-When the user says "Init folder" or asks to initialize a Vibe Research project:
 
 ```bash
 bash ~/.cursor/skills/vibe-research/scripts/init.sh
 ```
 
-See [reference/init.md](reference/init.md) for full details: what files get created, post-init steps if code already exists, and localized paper setup.
+See [reference/init.md](reference/init.md) for details and post-init steps.
+
+## Migration
+
+- **Full migration** (no VR structure) — see [reference/migrate.md](reference/migrate.md)
+- **Partial migration** (some VR structure, incomplete or drifted) — see [reference/partial-migrate.md](reference/partial-migrate.md)
 
 ## Core Rule: Bi-directional Sync
 
-**This is the highest-priority rule. Never skip it.**
+**Highest-priority rule. Never skip.**
 
 | Trigger | Required action |
 |---------|-----------------|
@@ -56,34 +32,25 @@ See [reference/init.md](reference/init.md) for full details: what files get crea
 | Edit a `doc/` design or API page | Sync the change back to code |
 | Update `README.md` API/usage | Ensure code matches the documented interface |
 
-**Methodological level** = algorithm design, loss functions, model architecture choices, data processing approaches. NOT variable renaming, formatting, minor refactors.
-
-**Implementation level** = public APIs, key design decisions, architecture changes, new modules, new dependencies, bug fixes with non-obvious root causes.
+**Methodological** = algorithm design, loss functions, model architecture, data processing. **Implementation** = public APIs, design decisions, architecture changes, new modules, non-obvious bug fixes.
 
 ## Document Maintenance
 
-**Invoked at the end of every agent session.** The `doc/` folder is an agent-maintained developer knowledge base that evolves with the research — the engineering companion to `paper.md`. Bi-directional sync with code; `doc/README.md` (max 120 lines) is the entry point, with sub-pages for architecture, API, decisions, pitfalls, snippets, and resources.
+**Invoked at the end of every agent session.** `doc/` is the engineering companion to `paper.md`. Every file ≤ 120 lines; every file linked from its parent `README.md`; navigate by following links, never by scanning.
 
-See [reference/doc-maintenance.md](reference/doc-maintenance.md) for the full specification: directory structure, sub-page templates, sync rules, and session-end checklist.
+See [reference/doc-maintenance.md](reference/doc-maintenance.md) for structure, templates, sync rules, and session-end checklist.
 
 ## Principal
 
-`principal.md` records user-stated principles and preferences that the agent should universally follow across sessions. The agent dynamically updates this file when the user expresses a generalizable preference or working principle. Read it at the start of every session; append to it when new principles emerge.
+`principal.md` records user-stated principles. Read at session start; append when new principles emerge.
 
-## File Formats and Templates
+## File Formats
 
-See [reference/formats.md](reference/formats.md) for exact templates.
-
-Key constraints:
-- `paper.md`: four sections only — Abstract, Introduction, Method, Result. Academic style, no code references.
-- Research log: `research_log/YYYYMMDD_HH-MM.md`, created after every session.
-- `doc/`: bi-directional sync with code; see [Document Maintenance](#document-maintenance) above.
+See [reference/formats.md](reference/formats.md). Key constraints: `paper.md` has four sections only (Abstract, Introduction, Method, Result); research log entries go in `research_log/YYYYMMDD_HH-MM.md`.
 
 ## Coding Style
 
-Research code prioritizes readability over abstraction:
-
-- **KISS + YAGNI**: Write the most direct implementation; no generic utilities or future-proofing
-- **LoB (Locality of Behavior)**: Keep related logic together. A 60-line function that clearly mirrors a formula's steps is better than 10-file inheritance chains
-- **Fail-fast**: Assert dimensions, check for NaN, crash immediately on bad data — crashing is useful debugging information
+- **KISS + YAGNI**: Most direct implementation; no future-proofing
+- **LoB (Locality of Behavior)**: Keep related logic together over splitting across files
+- **Fail-fast**: Assert dimensions, check for NaN, crash on bad data
 - **All code comments in English**

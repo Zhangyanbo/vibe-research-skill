@@ -50,13 +50,8 @@ Tables in standard Markdown. Include analysis.]
 
 Agent-maintained developer knowledge base. Bi-directional sync with code. See [doc-maintenance.md](doc-maintenance.md) for the full specification.
 
-Key files:
-- `doc/README.md` — entry point, max 120 lines, links to sub-pages
-- `doc/architecture.md` — module map, data flow
-- `doc/api.md` — public API reference (PyTorch-doc style)
-- `doc/decisions.md` — key non-obvious design decisions
-- `doc/pitfalls.md` — gotchas, auto-appended on bug fixes
-- `doc/snippets/` — reusable code patterns
-- `doc/resources/` — external links, papers, datasets
-
-Create files as content warrants. Only `doc/README.md` is mandatory.
+Key rules:
+- **Every file ≤ 120 lines.** Extract into sub-pages when approaching the limit.
+- **Link-based navigation.** Every file is linked from its parent `README.md`. Navigate by following links, not by scanning the tree.
+- **READMEs at every level.** Each directory has a `README.md` as table of contents.
+- Only `doc/README.md` is mandatory. Create other pages as content warrants.
