@@ -1,6 +1,6 @@
-# Migrating an Existing Project to Vibe Research
+# Full Migration — Existing Project to Vibe Research
 
-Use this workflow when the user asks to convert an existing project into a Vibe Research-compatible structure.
+Use this workflow when the project has **no** Vibe Research structure and needs a complete conversion.
 
 ---
 

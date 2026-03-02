@@ -1,6 +1,6 @@
 ---
 name: vibe-research
-description: Set up and maintain a Vibe Research project with bi-directional sync between experimental code, paper.md, and developer docs. Use when starting a research project, managing experimental code, maintaining research documentation, creating academic papers, writing research logs, updating project docs, migrating an existing project to Vibe Research structure, or when the user mentions vibe research, paper sync, research log, experiment tracking, project migration, doc update, or bi-directional sync between code and paper.
+description: Set up and maintain a Vibe Research project with bi-directional sync between experimental code, paper.md, and developer docs. Use when starting a research project, managing experimental code, maintaining research documentation, creating academic papers, writing research logs, updating project docs, migrating an existing project to Vibe Research structure, or when the user mentions vibe research, paper sync, research log, experiment tracking, project migration, partial migration, incremental migration, doc update, or bi-directional sync between code and paper.
 ---
 
 # Vibe Research
@@ -9,7 +9,7 @@ Vibe Research treats the AI agent as a "talented but untrustworthy remote resear
 
 ## Migrating an Existing Project
 
-When the user asks to convert an existing project into a Vibe Research structure:
+### Full migration (no existing VR structure)
 
 1. **Understand the project** — if the user hasn't explained the experiment flow, goal, and result locations, ask before touching any files.
 2. **Run the init script** (idempotent — safe on existing directories).
@@ -19,7 +19,18 @@ When the user asks to convert an existing project into a Vibe Research structure
 6. **Populate `doc/`** from code reading (see [Document Maintenance](#document-maintenance) below).
 7. **Populate `paper.md` and `README.md`** based on current state.
 
-See [reference/migrate.md](reference/migrate.md) for the full checklist and detailed guidance.
+### Partial migration (some VR structure already exists)
+
+When a project has **some** VR structure but is incomplete or drifted out of sync:
+
+1. **Audit every component** — classify each as conforming / stale / non-conforming / missing. Present the audit table to the user.
+2. **Generate a plan grouped by risk** (safe → moderate → caution). Get user approval.
+3. **Execute incrementally** — create missing structure first, then move files, then refresh stale docs, then restructure non-conforming files. Verify after each step.
+4. **Verify sync state** — confirm `paper.md`, `doc/`, `README.md`, and code are all in sync.
+
+**Key safety rules**: never overwrite meaningful content without showing a diff; use `git mv`; back up before restructuring; merge rather than replace files that have project-specific customizations.
+
+See [reference/migrate.md](reference/migrate.md) for full migration and [reference/partial-migrate.md](reference/partial-migrate.md) for partial migration.
 
 ---
 
