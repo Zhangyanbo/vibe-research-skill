@@ -31,12 +31,6 @@ When the user says "Init folder" or asks to initialize a Vibe Research project:
 bash ~/.cursor/skills/vibe-research/scripts/init.sh
 ```
 
-For LaTeX paper support (only when user requests):
-
-```bash
-bash ~/.cursor/skills/vibe-research/scripts/init_latex.sh
-```
-
 See [reference/init.md](reference/init.md) for full details: what files get created, post-init steps if code already exists, and localized paper setup.
 
 ## Core Rule: Bi-directional Sync
@@ -48,7 +42,6 @@ See [reference/init.md](reference/init.md) for full details: what files get crea
 | Code changes at methodological level | Update `paper.md` Method + Result |
 | Edit `paper.md` Method section | Sync the logic back to code |
 | Update `README.md` API/usage | Ensure code matches the documented interface |
-| LaTeX paper exists: any sync event above | Also update `latex/` accordingly |
 
 **Methodological level** = algorithm design, loss functions, model architecture choices, data processing approaches. NOT variable renaming, formatting, minor refactors.
 
@@ -60,23 +53,6 @@ Key constraints:
 - `paper.md`: four sections only — Abstract, Introduction, Method, Result. Academic style, no code references.
 - Research log: `research_log/YYYYMMDD_HH-MM.md`, created after every session.
 - `documents.md`: one-way sync (code → docs); never modify code based on it.
-
-## LaTeX Paper
-
-See [reference/latex.md](reference/latex.md) for structure, section mapping, and `math_commands.tex` shorthands.
-
-## Writing Into the Paper
-
-When the user provides chat logs, emails, or notes and asks to incorporate them into the paper, apply these rules:
-
-- **Filter first**: only include content the user explicitly affirmed; do not promote AI suggestions the user never endorsed.
-- **No copy-paste**: always rewrite source material as coherent academic prose.
-- **Read before writing**: understand the full paper structure before deciding where new content goes; a single point may need to appear in multiple places.
-- **Academic style**: no bullet points unless requested; use subsections sparingly.
-- **Role boundaries**: do not write Discussion unsolicited; do not editorialize on behalf of the user.
-- **Compile after every edit**: fix any LaTeX errors before moving on.
-
-See [reference/writing.md](reference/writing.md) for full guidance.
 
 ## Coding Style
 

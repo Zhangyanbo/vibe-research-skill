@@ -23,14 +23,6 @@ project/
 
 **If code already exists at init time**: read it and populate `paper.md`, `README.md`, and `documents.md` from scratch based on what you find.
 
-## LaTeX Paper (on demand)
-
-See [latex.md](latex.md) for full details.
-
-```bash
-bash ~/.cursor/skills/vibe-research/scripts/init_latex.sh
-```
-
 ## Localized Papers
 
 If the user requests a non-English paper, create `paper.{LANG}.md` (e.g. `paper.zh.md`):
