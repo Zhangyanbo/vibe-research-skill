@@ -20,10 +20,24 @@ echo "✓ Created directories: src/, results/, research_log/img/"
 
 # ── AGENTS.md ─────────────────────────────────────────────────────────────────
 if [ ! -f "$TARGET/AGENTS.md" ]; then
-    cp "$TEMPLATES/AGENTS.md" "$TARGET/AGENTS.md"
+    cp "$TEMPLATES/agents-rules.md" "$TARGET/AGENTS.md"
     echo "✓ Created AGENTS.md"
 else
     echo "  Skipped AGENTS.md (already exists)"
+fi
+
+# ── principal.md ──────────────────────────────────────────────────────────────
+if [ ! -f "$TARGET/principal.md" ]; then
+    cat > "$TARGET/principal.md" << 'EOF'
+# Principal
+
+> Agent-maintained file. Records user-stated principles and preferences
+> that apply universally across sessions. Read at the start of every session.
+
+EOF
+    echo "✓ Created principal.md"
+else
+    echo "  Skipped principal.md (already exists)"
 fi
 
 # ── paper.md ──────────────────────────────────────────────────────────────────
@@ -63,6 +77,7 @@ python src/main.py
 |------|-------------|
 | `src/` | Core experimental code |
 | `results/` | Experiment outputs |
+| `doc/` | Developer docs (agent-maintained) |
 | `research_log/` | Per-session reports |
 
 ## Data
@@ -74,37 +89,38 @@ else
     echo "  Skipped README.md (already exists)"
 fi
 
-# ── documents.md ──────────────────────────────────────────────────────────────
-if [ ! -f "$TARGET/documents.md" ]; then
-    cat > "$TARGET/documents.md" << 'EOF'
-# Developer & Collaborator Reference
+# ── doc/ folder ───────────────────────────────────────────────────────────────
+mkdir -p "$TARGET/doc"
+if [ ! -f "$TARGET/doc/README.md" ]; then
+    cat > "$TARGET/doc/README.md" << 'EOF'
+# Project Developer Docs
 
-> One-way sync from code → this file.
-> Add anything with >50% chance of future usefulness.
+> Auto-maintained by the AI agent. Bi-directional sync with code.
 
-## Architecture
+## Overview
 
-[High-level description of how the code is organized.]
+[2-3 sentence project summary from an engineering perspective.]
 
-## Key Design Decisions
+## Quick Links
 
-[Decisions made and why. Alternatives considered.]
+| Topic | File | Summary |
+|-------|------|---------|
+| Architecture | [architecture.md](architecture.md) | Module layout and data flow |
+| API Reference | [api.md](api.md) | Public functions, classes, parameters |
+| Design Decisions | [decisions.md](decisions.md) | Why things are built this way |
+| Pitfalls | [pitfalls.md](pitfalls.md) | Known gotchas and debugging tips |
 
-## Gotchas & Known Issues
+## Getting Started
 
-[Non-obvious problems encountered and their solutions.]
+[Minimal steps to get a new developer productive.]
 
-## Environment Notes
+## Key Concepts
 
-[Python version, GPU requirements, OS-specific notes, etc.]
-
-## Failed Approaches
-
-[What was tried and didn't work, to avoid repeating mistakes.]
+[3-5 bullet points covering the most important abstractions.]
 EOF
-    echo "✓ Created documents.md"
+    echo "✓ Created doc/README.md"
 else
-    echo "  Skipped documents.md (already exists)"
+    echo "  Skipped doc/README.md (already exists)"
 fi
 
 # ── .gitignore ────────────────────────────────────────────────────────────────
@@ -160,4 +176,4 @@ fi
 
 echo ""
 echo "Done. Project is ready."
-echo "Next: fill in paper.md, README.md, and start coding in src/."
+echo "Next: fill in paper.md, README.md, doc/README.md, and start coding in src/."

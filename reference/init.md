@@ -11,9 +11,11 @@ Idempotent — skips files that already exist. Creates in the current working di
 ```
 project/
 ├── AGENTS.md              # Agent instructions (versioned)
+├── principal.md           # User-stated principles (agent-maintained)
 ├── paper.md               # Shadow academic paper (versioned)
 ├── README.md              # Engineering guide (how to run experiments)
-├── documents.md           # Developer/collaborator reference
+├── doc/                   # Developer knowledge base (agent-maintained)
+│   └── README.md          # Entry point (max 120 lines)
 ├── .gitignore             # Python defaults + paper.[a-z][a-z].md
 ├── src/                   # Core code
 ├── results/               # Experiment outputs
@@ -21,7 +23,7 @@ project/
     └── img/
 ```
 
-**If code already exists at init time**: read it and populate `paper.md`, `README.md`, and `documents.md` from scratch based on what you find.
+**If code already exists at init time**: read it and populate `paper.md`, `README.md`, and `doc/` from scratch based on what you find.
 
 ## Localized Papers
 

@@ -28,7 +28,7 @@ Run the standard init script in the project root (idempotent — safe to run on 
 bash ~/.cursor/skills/vibe-research/scripts/init.sh
 ```
 
-This creates any missing folders and files (`src/`, `results/`, `paper.md`, `README.md`, `documents.md`, etc.) without overwriting existing ones.
+This creates any missing folders and files (`src/`, `results/`, `paper.md`, `README.md`, `doc/`, etc.) without overwriting existing ones.
 
 See [init.md](init.md) for what gets created.
 
@@ -87,21 +87,17 @@ rg "old_result_dir" --type py
 
 ---
 
-## Step 6 – Write `documents.md`
+## Step 6 – Populate `doc/`
 
-`documents.md` is for developers and collaborators (including future agents). Populate it based on what you learned while reading and migrating the code.
+The `doc/` folder is the project's developer knowledge base (see [doc-maintenance.md](doc-maintenance.md) for the full spec). Populate it based on what you learned while reading and migrating the code.
 
-Include (anything with >50% chance of future usefulness):
+1. Fill in `doc/README.md` with an overview and quick links (max 120 lines).
+2. Create `doc/architecture.md` with the module map and data flow.
+3. Create `doc/api.md` if there are public APIs worth documenting.
+4. Create `doc/decisions.md` with key decisions made during migration (e.g., why a file stayed at root).
+5. Create `doc/pitfalls.md` with any gotchas discovered during the migration.
 
-- How to run experiments (commands, flags)
-- What each result artifact means
-- Non-obvious data formats or preprocessing steps
-- Environment requirements or gotchas
-- Decisions made during migration (e.g., why a file stayed at root)
-
-See [formats.md](formats.md) for the full `documents.md` policy.
-
-Sync is one-way: **code → `documents.md`**. Never change code based on this file.
+Sync is **bi-directional**: code ↔ `doc/`. See the main SKILL.md for sync rules.
 
 ---
 
@@ -122,6 +118,6 @@ Based on your understanding from Step 1 and your code reading:
 - [ ] Existing results in results/
 - [ ] All path references in code updated
 - [ ] Smoke test passed (no errors, no data modified, temp files deleted)
-- [ ] documents.md populated
+- [ ] doc/ populated (at minimum doc/README.md)
 - [ ] paper.md and README.md reflect current state
 ```

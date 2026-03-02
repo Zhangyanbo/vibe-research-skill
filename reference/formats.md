@@ -46,13 +46,17 @@ Tables in standard Markdown. Include analysis.]
 **Images**: Before embedding, copy to `research_log/img/` and rename:
 `[original_name]_[YYYY-MM-DD-H_M_S].[ext]`
 
-## documents.md
+## doc/ Folder
 
-For developers, collaborators, and future agents. Add anything with >50% chance of future usefulness:
-- Architecture decisions and trade-offs
-- Non-obvious data formats or structures
-- Gotchas encountered during experiments
-- Environment setup specifics
-- What worked / what failed (to avoid repeating mistakes)
+Agent-maintained developer knowledge base. Bi-directional sync with code. See [doc-maintenance.md](doc-maintenance.md) for the full specification.
 
-Sync direction is ONE-WAY: code drives this file. Never modify code based on `documents.md`.
+Key files:
+- `doc/README.md` — entry point, max 120 lines, links to sub-pages
+- `doc/architecture.md` — module map, data flow
+- `doc/api.md` — public API reference (PyTorch-doc style)
+- `doc/decisions.md` — key non-obvious design decisions
+- `doc/pitfalls.md` — gotchas, auto-appended on bug fixes
+- `doc/snippets/` — reusable code patterns
+- `doc/resources/` — external links, papers, datasets
+
+Create files as content warrants. Only `doc/README.md` is mandatory.

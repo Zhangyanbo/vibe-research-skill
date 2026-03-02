@@ -1,6 +1,6 @@
 # Vibe Research
 
-An Agent skill for setting up and maintaining **Vibe Research** projects with bi-directional sync between experimental code and a shadow academic paper (`paper.md`).
+An Agent skill for setting up and maintaining **Vibe Research** projects with bi-directional sync between experimental code, a shadow academic paper (`paper.md`), and developer docs (`doc/`).
 
 For the original post introducing this workflow, see [this thread](https://x.com/YanboZhang3/status/2017365847589695530).
 
@@ -12,7 +12,7 @@ This skill teaches the agent how to:
 
 - **Initialize** a full Vibe Research project (folders, templates, `.gitignore`)
 - **Keep `paper.md` and code in sync** when either side changes at the methodological level
-- **Maintain** `README.md` (how to run experiments), `documents.md` (developer/collaborator notes)
+- **Maintain `doc/`** — an agent-maintained developer knowledge base with architecture, API reference, design decisions, pitfalls, and code snippets
 - **Write research logs** after each session with objectives, changes, results, and next steps
 
 ## When to Use
@@ -28,8 +28,9 @@ From a project folder, ask the agent to initialize a Vibe Research project (e.g.
 
 - `paper.md` — shadow academic paper (Abstract, Introduction, Method, Result)
 - `README.md` — engineering guide and how to run experiments
-- `documents.md` — architecture, gotchas, environment notes
-- `AGENTS.md` — agent instructions (gitignored)
+- `doc/` — developer knowledge base (architecture, API docs, pitfalls, snippets)
+- `principal.md` — user-stated principles (agent-maintained)
+- `AGENTS.md` — agent instructions
 - `src/`, `results/`, `research_log/`
 
 After that, any methodological change in code should update `paper.md`, and any change in `paper.md`’s Method section should be reflected in the code.
@@ -38,10 +39,12 @@ After that, any methodological change in code should update `paper.md`, and any 
 
 ```
 project/
-├── AGENTS.md              # Agent instructions (gitignored)
-├── paper.md               # Shadow academic paper (gitignored)
+├── AGENTS.md              # Agent instructions
+├── principal.md           # User-stated principles (agent-maintained)
+├── paper.md               # Shadow academic paper
 ├── README.md              # How to run experiments
-├── documents.md           # Developer/collaborator reference
+├── doc/                   # Developer knowledge base (agent-maintained)
+│   └── README.md          # Entry point (max 120 lines)
 ├── .gitignore
 ├── src/                   # Core code
 ├── results/               # Experiment outputs
