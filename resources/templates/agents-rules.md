@@ -12,15 +12,29 @@ While writing code, conducting experiments, and analyzing data, maintain these d
   - **Method**: Mathematics and algorithmic frameworks only — no class names, function calls, or file paths. Detail level matches an academic paper (concrete formulas, core ideas).
   - **Result**: Experimental results with embedded images and tables. Images must be embedded inline; tables in standard Markdown.
 - `README.md`: Engineering guide. How to run experiments, key APIs, data storage locations and structures. No math.
-- `documents.md`: Developer/collaborator reference. One-way sync from code. Add anything with >50% chance of future usefulness: architecture decisions, gotchas, failed approaches, environment notes.
+- `doc/`: Developer knowledge base. Bi-directional sync with code. Contains architecture, API reference, design decisions, pitfalls, code snippets, and resources. See the vibe-research skill's **Document Maintenance** section for the full spec.
 
 ### Bi-directional Sync Rules
 
-**Code → Docs**: Any code change at the methodological level (algorithm, loss function, model architecture, data processing) must update `paper.md` Method and Result sections.
+**Code → Docs**: Any code change at the methodological level (algorithm, loss function, model architecture, data processing) must update `paper.md` Method and Result sections. Any code change at the implementation level (APIs, architecture, new modules, bug fixes) must update the relevant `doc/` page(s).
 
-**Docs → Code**: Any edit to the Method section of `paper.md` must be reflected in the code. Any update to `README.md` APIs must match the code.
+**Docs → Code**: Any edit to the Method section of `paper.md` must be reflected in the code. Any update to `README.md` APIs or `doc/` design/API pages must match the code.
 
 **This is paramount and must always be followed.**
+
+### Post-Session Mandatory Steps
+
+**At the end of every agent interaction**, you MUST:
+
+1. Write the research log (`research_log/YYYYMMDD_HH-MM.md`).
+2. **Invoke the Document Maintenance sub-skill** from the vibe-research skill: review what changed in this session and update the relevant `doc/` pages accordingly.
+3. **Update `principal.md`** if the user expressed any new generalizable preference or working principle during this session.
+
+## Principal
+
+Read `principal.md` at the **start of every session**. It contains user-stated principles and preferences that apply universally across sessions.
+
+When the user expresses a generalizable working principle (not a one-off task instruction), append it to `principal.md`. Examples: coding conventions, communication preferences, domain-specific rules, experiment design philosophies.
 
 ### Initialization
 
@@ -62,7 +76,7 @@ Follow KISS + YAGNI + LoB + Fail-fast:
 ## Language
 
 - All code **comments**: English.
-- **Default language for docs**: English. `paper.md`, `README.md`, `documents.md`, and research log are in English unless the user explicitly requests otherwise.
+- **Default language for docs**: English. `paper.md`, `README.md`, `doc/`, and research log are in English unless the user explicitly requests otherwise.
 - **If the user explicitly asks for another language**: create and maintain a localized paper as `paper.{LANG}.md` (e.g. `paper.zh.md` for Chinese). Keep the same section structure (Abstract, Introduction, Method, Result) and sync content from `paper.md` into the localized file whenever you sync the paper.
 - **Sync scope**: When syncing the paper, if the project root contains any `paper.{LANG}.md` files in addition to `paper.md`, sync those localized documents as well — i.e. keep `paper.md` (English) and all existing `paper.{LANG}.md` in sync with the code and with each other.
 - **.gitignore for localized papers**: Add every non-English paper file to `.gitignore` (e.g. when you create `paper.zh.md`, add `paper.zh.md` or the pattern `paper.[a-z][a-z].md` so localized papers are not committed unless the user intends otherwise).
