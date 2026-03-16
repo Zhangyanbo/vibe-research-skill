@@ -79,13 +79,13 @@ Key constraints:
 - Research log: `research_log/YYYYMMDD_HH-MM.md`, created after every session.
 - `doc/`: bi-directional sync with code; see [Document Maintenance](#document-maintenance) above.
 
-## Directory Size Limit (5-item rule)
+## Directory Size Limit (7-item rule)
 
-Every directory under `src/` and `results/` must contain **no more than 5 items** (files + subdirectories combined). When a directory would exceed 5 items, create semantically named subdirectories and distribute files into them. Apply this rule recursively — if a subdirectory itself would exceed 5 items, split it further.
+Every directory under `src/` and `results/` must contain **no more than 7 items** (files + subdirectories combined). When a directory would exceed 7 items, create semantically named subdirectories and distribute files into them. Apply this rule recursively — if a subdirectory itself would exceed 7 items, split it further.
 
-**For documentation directories** (`doc/`, `research_log/`, etc.): the same 5-item limit applies. Whenever a document is placed inside a subdirectory, its parent directory must contain a document (typically a `README.md` or an index page) that references the subdirectory and lists what's inside, so nothing gets lost. This ensures a reader can always navigate top-down without guessing.
+**For documentation directories** (`doc/`, `research_log/`, etc.): the same 7-item limit applies. Whenever a document is placed inside a subdirectory, its parent directory must contain a document (typically a `README.md` or an index page) that references the subdirectory and lists what's inside, so nothing gets lost. This ensures a reader can always navigate top-down without guessing.
 
-**Why this matters**: Flat directories with dozens of files become unnavigable fast, especially for an AI agent scanning project structure. A shallow tree with ≤5 items per node is easy to reason about and keeps both humans and agents oriented.
+**Why this matters**: 7 ± 2 is the classic working-memory capacity (Miller, 1956). Capping directories at 7 items keeps each level scannable in a single glance — for both humans and AI agents.
 
 ## Coding Style
 
