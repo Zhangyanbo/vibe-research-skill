@@ -79,6 +79,14 @@ Key constraints:
 - Research log: `research_log/YYYYMMDD_HH-MM.md`, created after every session.
 - `doc/`: bi-directional sync with code; see [Document Maintenance](#document-maintenance) above.
 
+## Directory Size Limit (5-item rule)
+
+Every directory under `src/` and `results/` must contain **no more than 5 items** (files + subdirectories combined). When a directory would exceed 5 items, create semantically named subdirectories and distribute files into them. Apply this rule recursively — if a subdirectory itself would exceed 5 items, split it further.
+
+**For documentation directories** (`doc/`, `research_log/`, etc.): the same 5-item limit applies. Whenever a document is placed inside a subdirectory, its parent directory must contain a document (typically a `README.md` or an index page) that references the subdirectory and lists what's inside, so nothing gets lost. This ensures a reader can always navigate top-down without guessing.
+
+**Why this matters**: Flat directories with dozens of files become unnavigable fast, especially for an AI agent scanning project structure. A shallow tree with ≤5 items per node is easy to reason about and keeps both humans and agents oriented.
+
 ## Coding Style
 
 Research code prioritizes readability over abstraction:
@@ -87,3 +95,4 @@ Research code prioritizes readability over abstraction:
 - **LoB (Locality of Behavior)**: Keep related logic together. A 60-line function that clearly mirrors a formula's steps is better than 10-file inheritance chains
 - **Fail-fast**: Assert dimensions, check for NaN, crash immediately on bad data — crashing is useful debugging information
 - **All code comments in English**
+- **500-line file limit**: Keep individual code files under 500 lines. If a file grows beyond this, split it into logically cohesive modules. The only exception is when a single class genuinely requires more than 500 lines due to inherent complexity (e.g., a model class with many tightly coupled methods) — in that case, document why the file is long in a comment at the top. This limit keeps files reviewable in one sitting and makes diffs easier to read.
