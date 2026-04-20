@@ -13,8 +13,15 @@ Vibe Research treats the AI agent as a "talented but untrustworthy remote resear
 
 1. **Understand the project** — if the user hasn't explained the experiment flow, goal, and result locations, ask before touching any files.
 2. **Run the init script** (idempotent — safe on existing directories).
-3. **Move source code → `src/`**, existing results → `results/`.
-4. **Update all path references** in code to match the new layout.
+3. **Move source code → `src/`**, existing results → `results/`:
+   ```bash
+   git mv *.py src/          # adapt glob to actual source files
+   git mv outputs/ results/  # preserve git history
+   ```
+4. **Update all path references** in code to match the new layout:
+   ```bash
+   rg "outputs/" --type py   # find stale path references
+   ```
 5. **Smoke test** — run with minimal config; no data corruption; delete temp files; estimate runtime first (max 10 min).
 6. **Populate `doc/`** from code reading (see [Document Maintenance](#document-maintenance) below).
 7. **Populate `paper.md` and `README.md`** based on current state.
@@ -81,18 +88,14 @@ Key constraints:
 
 ## Directory Size Limit (7-item rule)
 
-Every directory under `src/` and `results/` must contain **no more than 7 items** (files + subdirectories combined). When a directory would exceed 7 items, create semantically named subdirectories and distribute files into them. Apply this rule recursively — if a subdirectory itself would exceed 7 items, split it further.
+Every directory under `src/` and `results/` must contain **no more than 7 items** (files + subdirectories combined). When exceeded, create semantically named subdirectories and distribute files. Apply recursively.
 
-**For documentation directories** (`doc/`, `research_log/`, etc.): the same 7-item limit applies. Whenever a document is placed inside a subdirectory, its parent directory must contain a document (typically a `README.md` or an index page) that references the subdirectory and lists what's inside, so nothing gets lost. This ensures a reader can always navigate top-down without guessing.
-
-**Why this matters**: 7 ± 2 is the classic working-memory capacity (Miller, 1956). Capping directories at 7 items keeps each level scannable in a single glance — for both humans and AI agents.
+**Documentation directories** (`doc/`, `research_log/`, etc.): same 7-item limit. Parent directories must contain a `README.md` linking to each subdirectory.
 
 ## Coding Style
 
-Research code prioritizes readability over abstraction:
-
-- **KISS + YAGNI**: Write the most direct implementation; no generic utilities or future-proofing
-- **LoB (Locality of Behavior)**: Keep related logic together. A 60-line function that clearly mirrors a formula's steps is better than 10-file inheritance chains
-- **Fail-fast**: Assert dimensions, check for NaN, crash immediately on bad data — crashing is useful debugging information
-- **All code comments in English**
-- **500-line file limit**: Keep individual code files under 500 lines. If a file grows beyond this, split it into logically cohesive modules. The only exception is when a single class genuinely requires more than 500 lines due to inherent complexity (e.g., a model class with many tightly coupled methods) — in that case, document why the file is long in a comment at the top. This limit keeps files reviewable in one sitting and makes diffs easier to read.
+- Direct implementations over abstractions — no generic utilities or future-proofing
+- Keep related logic together — a clear 60-line function beats a 10-file inheritance chain
+- Fail-fast: assert dimensions, check for NaN, crash on bad data
+- All code comments in English
+- **500-line file limit**: split into cohesive modules when exceeded. Exception: inherently complex single classes — add a top-of-file comment explaining why
