@@ -1,5 +1,5 @@
 ---
-name: elegant-coding
+name: vibe-research-coding
 description: Best practices for writing elegant, readable research code - direct implementations, locality of behavior, fail-fast, strict size limits, clean separation of experiment and plotting code. Use whenever writing or refactoring code in a research project, creating new experiment scripts, or organizing a source tree.
 ---
 

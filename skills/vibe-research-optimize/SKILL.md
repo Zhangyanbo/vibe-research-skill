@@ -1,5 +1,5 @@
 ---
-name: vibe-optimize
+name: vibe-research-optimize
 description: Large-scale parameter optimization for research projects using Bayesian (optuna TPE ask-tell) or evolutionary methods, with safeguards against metric gaming. Use when running hyperparameter search, tuning parameters at scale, setting up multi-round optimization experiments, or whenever the user mentions parameter sweeps, Bayesian optimization, or finding the best settings.
 ---
 

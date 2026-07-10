@@ -11,10 +11,10 @@ Set up and maintain Vibe Research projects: the user defines goals, standards an
 
 | Situation | Default skill | Also consult |
 |-----------|---------------|--------------|
-| Writing code | `elegant-coding` | `my-scientific-taste` |
-| Writing the paper | `paper-writing` | `my-scientific-taste` |
-| Exploring ideas, running experiments | `explore` | `my-scientific-taste` |
-| Large-scale parameter search | `vibe-optimize` | `my-scientific-taste` |
+| Writing code | `vibe-research-coding` | `my-scientific-taste` |
+| Writing the paper | `vibe-research-paper` | `my-scientific-taste` |
+| Exploring ideas, running experiments | `vibe-research-explore` | `my-scientific-taste` |
+| Large-scale parameter search | `vibe-research-optimize` | `my-scientific-taste` |
 | Plotting | `nature-style` | |
 
 - Use `my-scientific-taste` together with other skills when writing paper, writing code, exploring ideas.

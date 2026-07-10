@@ -1,5 +1,5 @@
 ---
-name: paper-writing
+name: vibe-research-paper
 description: Academic paper writing workflows and standards - arXiv LaTeX template, bilingual paper management, prose discipline, citations, compilation and delivery. Use when creating, writing, or revising an academic paper in a research project, setting up a paper's LaTeX structure, syncing bilingual versions, or checking paper-code consistency.
 ---
 

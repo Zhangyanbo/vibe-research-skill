@@ -1,7 +1,7 @@
 # Paper
 
 The final deliverable. The user reads it closely, repeatedly, and edits it by hand: this is the territory of the user's taste.
-Writing standards and workflow follow the `paper-writing` skill; style preferences follow `my-scientific-taste` (see the division-of-labor table in the root CLAUDE.md).
+Writing standards and workflow follow the `vibe-research-paper` skill; style preferences follow `my-scientific-taste` (see the division-of-labor table in the root CLAUDE.md).
 Technical details (how to compile, file layout) live in the [README](README.md), which may be updated dynamically.
 
 # Changes that need confirmation first

@@ -56,7 +56,7 @@ Do not create documents the user did not ask for (logs, summary reports, etc.): 
 # Reproducibility
 
 - Python goes through uv only: `uv add` / `uv add --dev` for packages (everything lands in pyproject.toml), `uv run` to run; bare `python` / `pip` are forbidden. After modifying pyproject.toml, run `uv lock` to keep uv.lock in sync (for remote deployments, ship both files together).
-- Fix the random seed in every experiment. Note that a fixed seed is not reproducibility: CUDA also needs explicit determinism settings (see the elegant-coding skill).
+- Fix the random seed in every experiment. Note that a fixed seed is not reproducibility: CUDA also needs explicit determinism settings (see the vibe-research-coding skill).
 - Large files stay out of git. Exception: **the plotting data behind every formal figure (CSV, config, other small files) must be committed alongside the figure**. GPU training is not bit-level reproducible; if those files are lost, the figure can never be drawn again. Beyond that, prefer formats smaller than CSV.
 
 # Division of labor
@@ -65,10 +65,10 @@ Different work is handled by different skills. Skills do not call each other; th
 
 | Situation | Skill | Also consult |
 |-----------|-------|--------------|
-| Exploring ideas, running experiments | explore | my-scientific-taste |
-| Large-scale parameter search | vibe-optimize | my-scientific-taste |
-| Writing code | elegant-coding | my-scientific-taste |
-| Writing the paper | paper-writing | my-scientific-taste |
+| Exploring ideas, running experiments | vibe-research-explore | my-scientific-taste |
+| Large-scale parameter search | vibe-research-optimize | my-scientific-taste |
+| Writing code | vibe-research-coding | my-scientific-taste |
+| Writing the paper | vibe-research-paper | my-scientific-taste |
 | Plotting | nature-style | |
 
 - The name `my-scientific-taste` is a fixed interface: each person swaps in their own taste and keeps the name.

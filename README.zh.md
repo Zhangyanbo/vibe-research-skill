@@ -1,6 +1,6 @@
 # Vibe Research
 
-**版本 2.0.5 beta** · [English](README.md)
+**版本 2.1.0 beta** · [English](README.md)
 
 一套用 AI agent 做科学研究的 [Claude Code](https://claude.com/claude-code) skill。
 
@@ -27,10 +27,10 @@
 | Skill | 做什么 |
 |-------|--------|
 | [`vibe-research`](skills/vibe-research/) | 核心：项目初始化与迁移、什么时候用哪个 skill、merge 验收。自带项目模板（每个目录一份 CLAUDE.md）。 |
-| [`explore`](skills/explore/) | 探索循环：开分支、小步快跑的实验、每一步出图、如实汇报，方向由人决定。 |
-| [`vibe-optimize`](skills/vibe-optimize/) | 大规模参数搜索（贝叶斯 / 演化），带防刷指标的护栏：图由人评分、汇报机制而不只是分数、搜索与正式结果严格隔离。 |
-| [`elegant-coding`](skills/elegant-coding/) | 科研代码最佳实践：直接的实现、fail-fast、严格的尺寸限制、实验与画图分离。 |
-| [`paper-writing`](skills/paper-writing/) | 论文规范与工作流：双语 arXiv LaTeX 模板、散文纪律、禁元写作、引用必须核实、编译通过才算完成。 |
+| [`vibe-research-explore`](skills/vibe-research-explore/) | 探索循环：开分支、小步快跑的实验、每一步出图、如实汇报，方向由人决定。 |
+| [`vibe-research-optimize`](skills/vibe-research-optimize/) | 大规模参数搜索（贝叶斯 / 演化），带防刷指标的护栏：图由人评分、汇报机制而不只是分数、搜索与正式结果严格隔离。 |
+| [`vibe-research-coding`](skills/vibe-research-coding/) | 科研代码最佳实践：直接的实现、fail-fast、严格的尺寸限制、实验与画图分离。 |
+| [`vibe-research-paper`](skills/vibe-research-paper/) | 论文规范与工作流：双语 arXiv LaTeX 模板、散文纪律、禁元写作、引用必须核实、编译通过才算完成。 |
 | [`my-scientific-taste`](skills/my-scientific-taste/) | 一个名字固定的占位符。个人品味——合格科学家之间真正有分歧的判断——住在这里。把内容换成你自己的；其他 skill 按这个名字来参考它。 |
 
 画图风格是独立的 skill：[nature-style](https://github.com/Zhangyanbo/nature-style-skill)。

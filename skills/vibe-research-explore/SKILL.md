@@ -1,5 +1,5 @@
 ---
-name: explore
+name: vibe-research-explore
 description: Run exploratory research loops - branch, run small fast experiments, produce figures, report findings honestly, let the user judge direction. Use when exploring a new idea or hypothesis, testing whether an approach works, running quick experiments in a research project, or whenever the user asks to "try" something experimental.
 ---
 
