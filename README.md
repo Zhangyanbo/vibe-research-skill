@@ -1,5 +1,7 @@
 # Vibe Research
 
+**Version 2.0 beta** · [中文版](README.zh.md)
+
 A set of [Claude Code](https://claude.com/claude-code) skills for doing scientific research with AI agents.
 
 It is built on one premise: **working with capable AI agents is a management problem, not a tooling problem.** Once agents can run experiments, write code, and draft papers, the bottleneck moves to the human side: how do you direct, review, and correct a talented team whose goals are not exactly yours and who knows more about what it just did than you do? Management science has thought about that problem for a century. This framework applies its answers to the one-person AI lab.
@@ -37,14 +39,11 @@ The three layers, in one line: **what is true for everyone goes in skills; what 
 
 ## Install
 
-Copy the folders under [`skills/`](skills/) into `~/.claude/skills/`:
+Paste this to your agent (Claude Code or any coding agent):
 
-```bash
-git clone https://github.com/Zhangyanbo/vibe-research-skill.git
-cp -r vibe-research-skill/skills/* ~/.claude/skills/
-```
+> Install the Vibe Research skills: clone https://github.com/Zhangyanbo/vibe-research-skill and copy every folder under `skills/` into my skills directory (for Claude Code, `~/.claude/skills/`). If older versions of these skills are already installed, replace them — but if I already have my own `my-scientific-taste`, keep mine. Tell me what you installed.
 
-Then open Claude Code and say something like *"init a vibe research project about ..."*. The agent will ask for your research question, your reading language for the paper, and where your existing code lives, then scaffold the project.
+Then say something like *"init a vibe research project about ..."*. The agent will ask for your research question, your reading language for the paper, and where your existing code lives, then scaffold the project.
 
 Before using it for real, open `skills/my-scientific-taste/SKILL.md` and replace its contents with your own taste. That file is meant to be yours.
 
