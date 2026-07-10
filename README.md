@@ -1,6 +1,6 @@
 # Vibe Research
 
-**Version 2.0.1 beta** · [中文版](README.zh.md)
+**Version 2.0.2 beta** · [中文版](README.zh.md)
 
 A set of [Claude Code](https://claude.com/claude-code) skills for doing scientific research with AI agents.
 
