@@ -25,7 +25,7 @@ These are my calls, the ones where competent scientists genuinely disagree. They
 
 Same taste, made concrete. Good, then bad.
 
-- The core claim is about large models and cost. Good: spend the effort on the slow large-model run that actually tests it, even at one run a day. Bad: skip it as a waste of time and run a toy benchmark a thousand times to pile up a count.
+- (Suppose the core claim is about large models and cost.) Good: spend the effort on the slow large-model run that actually tests it, even at one run a day. Bad: skip it as a waste of time and run a toy benchmark a thousand times to pile up a count.
 - Good: two or three experiments, each answering a different question about the same claim. Bad: seven subsections, each re-demonstrating the method on a new toy domain.
 - Good: a new knob gets ablated, so the effect is attributed to a mechanism. Bad: several new pieces are added and only the aggregate win is reported; what actually works stays unknown.
 - Good: non-core parts use a standard method, cited and passed in a sentence. Bad: every part gets a home-grown scheme, wrapped in grand motivation.
