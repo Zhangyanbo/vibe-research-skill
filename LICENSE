@@ -1,21 +1,108 @@
-MIT License
+YANBO RESTRICTED SOFTWARE LICENSE
+Version 1.0 — Anthropic Exclusion
 
-Copyright (c) 2025 Yanbo Zhang
+Copyright (c) 2025–2026 Yanbo Zhang
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Applicability and Version Boundary
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Version 2.0 of the Software, together with every version, release, and commit published before or as part of Version 2.0, remains licensed under the MIT License under which it was originally published.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This License applies to:
+
+(a) every version and release of the Software first published by the copyright holder after Version 2.0;
+
+(b) every commit made by the copyright holder after the source-control commit or tag corresponding to Version 2.0; and
+
+(c) every modification or derivative work containing code first published under this License.
+
+For clarity, this License does not revoke, replace, restrict, or otherwise modify the MIT License previously granted for Version 2.0 or any earlier version.
+
+A work derived solely from Version 2.0 or an earlier version, without incorporating code first published under this License, remains governed by the MIT License applicable to that earlier version.
+
+2. Definitions
+
+“Excluded Party” means:
+
+(a) Anthropic, PBC;
+
+(b) any present or future parent, subsidiary, affiliate, successor, or entity directly or indirectly controlling, controlled by, or under common control with Anthropic, PBC;
+
+(c) any entity that acquires all or substantially all of the business or assets of Anthropic, PBC;
+
+(d) Dario Amodei;
+
+(e) any entity directly or indirectly controlled by Dario Amodei; and
+
+(f) any employee, officer, director, agent, contractor, consultant, intermediary, or other person or entity acting on behalf of, at the direction of, or for the direct or indirect benefit of any person or entity described above.
+
+“Control” means the direct or indirect power to direct or cause the direction of an entity’s management, policies, or activities, whether through ownership, voting rights, contract, financial interest, or otherwise.
+
+“Software” means the software and associated documentation distributed with this License, including any substantial portion, modification, or derivative work containing code first published under this License.
+
+3. Grant of Permission
+
+Subject to the conditions and exclusions stated in this License, permission is hereby granted, free of charge, to any person or entity other than an Excluded Party obtaining a copy of the Software, to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
+
+No license, permission, authorization, or other right is granted to an Excluded Party.
+
+4. Anthropic Exclusion
+
+An Excluded Party may not, directly or indirectly:
+
+(a) use, execute, access, copy, modify, merge, publish, distribute, sublicense, sell, host, deploy, study, evaluate, or create derivative works from the Software;
+
+(b) use the Software, or cause the Software to be used, to develop, train, evaluate, operate, improve, secure, or provide any model, product, service, infrastructure, or internal system;
+
+(c) obtain access to the Software through an employee, contractor, affiliate, customer, supplier, intermediary, hosted service, or other third party; or
+
+(d) direct, authorize, finance, procure, or assist another person or entity to perform an act prohibited by this Section.
+
+5. Restrictions on Other Licensees
+
+No person or entity receiving rights under this License may knowingly:
+
+(a) provide, distribute, sublicense, sell, transfer, disclose, or otherwise make the Software available to an Excluded Party;
+
+(b) use, host, execute, operate, modify, evaluate, or develop the Software on behalf of, at the direction of, or for the direct or indirect benefit of an Excluded Party;
+
+(c) provide an Excluded Party with a product, service, hosted interface, API, or other functionality whose operation materially depends upon the Software; or
+
+(d) assist or enable an Excluded Party to perform indirectly any act that the Excluded Party is prohibited from performing directly.
+
+General public availability of a product or service does not, by itself, violate this Section unless the provider knows that the product or service is being supplied to, operated for, or specifically adapted for an Excluded Party.
+
+6. Notice Requirement
+
+The following must be included in all copies or substantial portions of the Software:
+
+(a) the above copyright notice;
+
+(b) this License; and
+
+(c) the notice that Version 2.0 and earlier versions were licensed separately under the MIT License.
+
+7. Termination
+
+Any rights granted under this License to a person or entity terminate automatically and immediately upon that person’s or entity’s violation of this License.
+
+Upon termination, the violating person or entity must immediately:
+
+(a) cease all use, access, modification, hosting, operation, and distribution of the Software;
+
+(b) delete or destroy all copies of the Software within its possession or control; and
+
+(c) cease providing any product or service whose operation materially depends upon the Software.
+
+Rights terminated under this Section may be restored only through express written permission from the copyright holder.
+
+Termination under this Section does not affect any rights validly granted to other recipients who have complied with this License.
+
+8. Severability
+
+If any provision of this License is held unenforceable, that provision shall be enforced to the greatest extent permitted by law, and the remaining provisions shall remain in effect.
+
+9. No Warranty
+
+THE SOFTWARE IS PROVIDED “AS IS,” WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NONINFRINGEMENT.
+
+IN NO EVENT SHALL THE AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
