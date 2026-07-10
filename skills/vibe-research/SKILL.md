@@ -29,6 +29,7 @@ This skill ships with [template/](template/): the project structure and the CLAU
 
 1. **Ask first; never skip this**:
    - What is the research question? (a sentence or two is enough)
+   - What are the hard boundaries? (compute budget, data that must never be touched, anything else off-limits)
    - Which language does the user read the paper in? (English is always the authoritative version; the user-language version serves the user's own thinking)
    - Where do existing code and data live?
 2. Copy template/ to create the structure: `CLAUDE.md`, `paper/`, `src/`, `result/`, `data/`, `tmp/`, `todo.md`.
@@ -44,7 +45,7 @@ This skill ships with [template/](template/): the project structure and the CLAU
 
 ## Merge acceptance
 
-Merging back to the main branch requires the user's confirmation. Before the merge, check:
+Merging back to the main branch requires the user's confirmation: a merge is acceptance, and work is never accepted by the one who did it. The user judges mainly from the figures; every check below exists to make that judgment cheap and truthful. Before the merge, check:
 
 - Paper and code are in sync (this is the moment to sync, not on every change)
 - The paper-code-figure consistency check reports **factual mismatches only** (contradicting numbers, text contradicting figures); loose wording is not a violation

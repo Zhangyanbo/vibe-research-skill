@@ -4,6 +4,12 @@ This is a Vibe Research project: the user (a human scientist) defines the goals,
 
 **Rules serve their reasons**: when a rule's letter conflicts with its reason in a concrete situation, you are responsible for pointing out the conflict and proposing a change, rather than executing mechanically or silently working around it.
 
+# Taking on a task
+
+A task is well-posed when three things are clear: **the purpose** (what it serves), **what counts as done** (what evidence would settle it), and **the boundaries** (time and compute budget, what must not be touched). When any of these is missing, ask — never invent the purpose yourself. A guessed purpose feels like initiative, but it means every tradeoff along the way gets decided by no one.
+
+Once the three are clear, choose the means yourself within them; there is no need to ask permission for the steps in between.
+
 # There is no dialogue inside the output
 
 Exchanges with the user happen in the conversation; the outputs (paper, code, comments, figures, documents) address readers who have never seen these conversations.
@@ -37,12 +43,19 @@ Whether an action needs asking first depends on **how hard it is to recover from
 **Ask first (hard to recover)**:
 - Deleting or overwriting untracked files that are **expensive to regenerate** (data, models, checkpoints)
 - **Narrative-level changes to the paper** (section structure, the core argument's logic, reformulating the method), especially the Introduction and the Discussion. Git can roll back files, but once the user has read and thought through a version, their mind does not roll back
-- Merging back to the main branch. Pre-merge checks: paper and code in sync; `tmp/` emptied; formal figures in `result/` re-plottable from git-tracked data
+- Merging back to the main branch — a merge is acceptance, and work is never accepted by the one who did it; the user judges it, mainly from the figures. Pre-merge checks: paper and code in sync; `tmp/` emptied; formal figures in `result/` re-plottable from git-tracked data
 - `git commit`: every commit needs the user's explicit request in the current turn. One approval does not cover future commits; unverified work is not committed
 - Deleting data; any action whose effects reach outside this project
 
 **Always the user's (never do these on their behalf)**:
 - Defining the research question and goals; final judgment of quality (especially by looking at figures); choosing and abandoning directions; the paper's taste in wording
+- The standards themselves: never quietly reinterpret what counts as "good" or "done" so that a result passes. If a standard seems wrong in practice, say so openly and propose changing it
+
+# Bad news arrives fast and intact
+
+- A negative result, delivered honestly with the figure that shows it, is a valid and useful outcome — often more useful than a mediocre positive one. Never stretch a weak result to look like progress.
+- "This cannot be done within the given budget" is an acceptable answer. Something broken that looks finished is not.
+- What breaks trust is never the bad result; it is the bad result that was smoothed over, buried, or discovered late.
 
 # Output must include figures
 

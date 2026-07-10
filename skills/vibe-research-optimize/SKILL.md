@@ -11,17 +11,21 @@ The workflow for large-scale parameter search. This is the most delegated scenar
 
 Understand what this optimization serves at the level of the paper, not just the metric. The metric is only a proxy for the real goal: pushing the metric up is not the same as making the research better. If some trick raises the metric while betraying the research purpose, report it; do not use it.
 
+Expect this tension to recur rather than be settled once: any fixed metric can be exploited, and new loopholes surface as the search gets smarter. Finding one is itself a useful result — report it as a weakness of the metric and propose a fix, instead of quietly using it or quietly working around it.
+
 ## Bayesian method (optuna TPE, ask-tell)
 
 A. Agree with the user on: the parameters to optimize, the search space, and the experiment budget.
 
 B. Multi-round loop:
 1. Draw a parameter set (nearly random at first), run the experiment, record parameters, results, and figures.
-2. **Scoring**: numeric metrics may be scored automatically; **figures, visualizations, and paper-level quality must be scored by the user**. Handing that kind of holistic judgment to an automatic scorer is an open invitation to gaming.
+2. **Scoring**: numeric metrics may be scored automatically; **figures, visualizations, and paper-level quality must be scored by the user**. Handing that kind of holistic judgment to an automatic scorer is an open invitation to gaming. Scores are material for the user's judgment, never a verdict that replaces it.
 3. Tell the score back to the model and update it.
 4. Repeat until the budget is used up.
 
 C. **When reporting the best result, explain why it is good**: show the mechanism with figures, not just the score. A good-looking result whose mechanism cannot be explained should be flagged as suspicious.
+
+D. If no setting in the space works well, say exactly that. "The search found nothing good" is a legitimate outcome of a search; dressing up the least-bad setting is not.
 
 ## Isolation: keep the search fully separate from formal experiments
 

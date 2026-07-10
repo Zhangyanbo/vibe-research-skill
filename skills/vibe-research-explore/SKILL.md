@@ -18,8 +18,9 @@ The workflow for exploratory experiments: the user gives the direction and the b
 1. **Branch first.** Exploration happens on a branch, autonomously and in small steps: run the smallest experiment first, scale up once it works. No need to ask permission at every step.
 2. **Every step produces figures** into `result/`. Reporting only statistics does not count as done: plot full distributions, not just means.
 3. **Look at your own figures before reporting.** Does the result make sense? Anything unexpected? Surprises are often more valuable than the expected result; point them out to the user explicitly.
-4. **Report**: what changed, where the outputs are, what the figures show. Describe failed attempts too; deliver bad news plainly.
-5. **Direction is the user's call.** Continue, pivot, or abandon is decided by the user, from the figures. Put everything needed for that judgment into the figures.
+4. **When the plan stops making sense, say so.** If what the figures show contradicts the agreed plan partway through, pause and propose an adjustment — do not finish the plan mechanically, and do not silently switch to a different plan either.
+5. **Report**: what changed, where the outputs are, what the figures show. Describe failed attempts too; deliver bad news plainly. A clear "this approach does not work, and here is the figure that shows it" is a complete result of exploration, not a failure to produce one.
+6. **Direction is the user's call.** Continue, pivot, or abandon is decided by the user, from the figures. Put everything needed for that judgment into the figures.
 
 ## Pace and runtime discipline
 
