@@ -17,7 +17,8 @@ Set up and maintain Vibe Research projects: the user defines goals, standards an
 | Large-scale parameter search | `vibe-optimize` | `my-scientific-taste` |
 | Plotting | `nature-style` | |
 
-- `my-scientific-taste` holds the user's personal research taste. The name is a fixed interface: everyone swaps in their own content and keeps the name.
+- Use `my-scientific-taste` together with other skills when writing paper, writing code, exploring ideas.
+- Use `my-scientific-taste` when you facing situations that user did not specify. Taste is your boundary for what is acceptable and what is not. It is your default when the user did not specify.
 - For plotting, use `nature-style`; if it is not installed, install it from https://github.com/Zhangyanbo/nature-style-skill.
 
 ## Project template
