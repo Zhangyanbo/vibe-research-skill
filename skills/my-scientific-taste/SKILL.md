@@ -1,47 +1,34 @@
 ---
 name: my-scientific-taste
-description: My personal scientific taste - my preferences in experiment design, in whether to invent or reuse a method, in what results deserve to exist, and in how a paper reads. Consult when designing or pruning experiments, deciding between a novel and a standard method, judging whether a result belongs, or writing and revising my papers.
+description: My personal scientific taste - my preferences in experiment design, in whether to invent or reuse a method, in what results deserve to exist, and in how a paper and its code read. Consult when designing or pruning experiments, deciding between a novel and a standard method, judging whether a result belongs, or writing and revising my papers and code.
 ---
 
 # My Scientific Taste
 
-These are my calls, the ones where competent scientists genuinely disagree. They are my defaults; the final judgment in the moment is always mine.
+These are my calls, the ones where competent scientists genuinely disagree. They are my defaults; the final judgment in the moment is always mine. The principles come first; the cases at the end make the abstract feeling concrete, and are the fastest way to calibrate.
 
-## Simplicity, and Occam's razor
+## Principles
 
-I like work that is simple and that lives in the gap between philosophy and engineering: a conceptual idea and a method that actually runs, both kept alive at once. Occam's razor is central to how I work. Given two ways to do something, I want the one with fewer moving parts, even when the fancier one scores a little better.
+**Simplicity, and Occam's razor.** I like simple work that lives in the gap between philosophy and engineering. Given two ways to do something, I want the one with fewer moving parts, even when the fancier one scores a little better.
 
-## One or two innovations per paper; standard methods everywhere else
+**One or two innovations; reuse standard machinery everywhere else.** A paper carries one or two innovations, no more. For any non-core component I prefer an established method over a home-grown one, even at a small cost in performance, and I name reused parts as reused rather than dressing them up. This highlights the core, de-risks the work through the literature behind standard methods, and keeps the paper legible.
 
-A paper should carry one or two innovations, no more. Everywhere outside the core contribution, I actively avoid novelty: for any non-core component I prefer an established prior method over a home-grown one, even at a small cost in performance. I will spend a whole day replacing a working method I invented with a standard one that performs slightly worse, and consider it time well spent.
+**Experiments serve one thesis.** Every experiment deepens the single central claim and isolates a mechanism, so the effect can be attributed to a cause. Effort follows the thesis, not the ease of the run: the experiment that actually tests the core claim earns the time even when it is slow. Compare against real baselines with honest statistics. Delete what adds no knowledge; quantity is not rigor.
 
-Three reasons this is discipline, not timidity:
-- It **highlights the core.** Novelty scattered everywhere hides the one place that actually matters.
-- It **de-risks.** A standard method has a body of literature behind it. If my run tunes poorly, that is probably my setup, not the method; a novel component that fails leaves me nothing to lean on.
-- It **keeps the paper legible.** Readers spend their attention on the real contribution.
+**Claims never outrun the evidence.** One tight thesis beats many loose claims. No framing grander than the results support; state what was shown and name where it does not yet hold. Reaching rhetoric is the tell of work unsure of its contribution.
 
-So for a non-core piece the bar is "well-established and defensible", not "new". Reach for the standard tool. When tempted to invent here, flag it and ask me.
+**How my papers read.** Nothing more, nothing less: every piece of logic, narrative or mathematical, serves the core intent, and nothing is there for erudition. One continuous stream, written in the logic I find most natural. The Introduction and the Discussion carry the most of me. No em-dashes, in any language. No self-coined slogan terms for the core mechanism.
 
-## An experiment earns its place only by adding knowledge
+**How my code reads.** The code should read like the one line of the algorithm; one concept per small file. Plain beats clever: I would rather a slightly worse, readable version than a powerful one no one can follow. Configuration is module-level constants, not a giant config of tunable arguments.
 
-Agents make experiments nearly free, and that is a trap. I do not want a pile of runs; I want the ones that change what we know.
+## Cases
 
-- If I can predict the outcome and the run just confirms the obvious, it has added nothing, however much work it was. Do not run it to have tried it.
-- Do not keep uninformative or negative results in the paper. Delete them. Effort already spent is not a reason to keep a result.
-- Quantity of experiments is not thoroughness, and it is not rigor. When it becomes easy to run twenty experiments, running twenty is a warning sign, not an achievement. Restraint is the thing to protect here.
+Same taste, made concrete. Good, then bad.
 
-## Claims never outrun the evidence
-
-One tight thesis beats many loosely connected claims; a paper is not stronger for holding more. I do not want framing grander than the results support. State exactly what was shown and no more. Reaching rhetoric is the tell of work that is unsure of its own contribution.
-
-## How my papers should read
-
-- **Nothing more, nothing less.** Every piece of logic, narrative or mathematical, serves the paper's core intent. Trim the side details. Math serves what follows and the necessary rigor, never erudition for its own sake.
-- **One continuous stream.** Write in the logic I find most natural; derivations flow without detours and the reader glides downstream.
-- **The Introduction and the Discussion carry the most of me.** They hold the narrative and the positioning, where my judgment runs deepest.
-- No em-dashes, in any language.
-- No self-coined slogan terms for the core mechanism; use the standard name.
-
-## How my code should read
-
-- Configuration is module-level constants, not a config dataclass. I resist turning everything into a tunable argument: many things cannot be described by a parameter in advance, and how the parts compose should be decided at the site of use, not fixed ahead of time.
+- The core claim is about large models and cost. Good: spend the effort on the slow large-model run that actually tests it, even at one run a day. Bad: skip it as a waste of time and run a toy benchmark a thousand times to pile up a count.
+- Good: two or three experiments, each answering a different question about the same claim. Bad: seven subsections, each re-demonstrating the method on a new toy domain.
+- Good: a new knob gets ablated, so the effect is attributed to a mechanism. Bad: several new pieces are added and only the aggregate win is reported; what actually works stays unknown.
+- Good: non-core parts use a standard method, cited and passed in a sentence. Bad: every part gets a home-grown scheme, wrapped in grand motivation.
+- Good: the claim covers exactly what was shown, and names where it does not yet win. Bad: "a fundamental, major transition" rides on a narrow demonstration.
+- Good: one concept per small file; the main loop reads like the algorithm's steps. Bad: a 1400-line class holding a 200-line training method and a 180-line plotting method, with attributes conjured by `exec()`.
+- Good: configuration is a handful of module-level constants. Bad: everything is a tunable argument in a giant config.

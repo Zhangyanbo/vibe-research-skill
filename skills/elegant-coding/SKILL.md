@@ -11,6 +11,9 @@ Best practices for research code: readability over abstraction. Every constraint
 
 - **KISS + YAGNI**: write the most direct implementation; no generic utilities, no future-proofing.
 - **Locality of Behavior**: keep related logic together. A 60-line function that clearly mirrors a formula's steps beats a 10-file inheritance chain.
+- **Code reads like the algorithm**: the main loop should read like the steps of the math it implements. Someone who knows the method should recognize it in the code at a glance.
+- **Plain beats clever**: never use tricks that defeat reading or static analysis (`exec` or dynamic attribute creation, global-state closures, type-sniffing branches), even when the plain version is longer.
+- **No dead code**: no commented-out blocks kept "just in case", no leftover debug prints. Delete it; git remembers.
 - **Fail-fast**: assert dimensions, check for NaN, crash immediately on bad data. A crash is useful debugging information. No defensive code: no meaningless try/except or if/else fallbacks.
 - All code comments in English.
 
@@ -31,3 +34,4 @@ Best practices for research code: readability over abstraction. Every constraint
   Exception: files that purely enumerate similar items (parameter tables, formula lists) have no limit.
 - Keep each folder to ~7 code files or fewer; beyond that, create semantically named subfolders as a Python package.
   The intent of this rule is scannability, not the number itself. It does not apply to folders the user never reads.
+- The failure mode to avoid is the god-file: a 1000-plus-line class holding 200-line methods, with plotting, training, and bookkeeping all fused together. One concept per small file; separate concerns instead of fusing them.
