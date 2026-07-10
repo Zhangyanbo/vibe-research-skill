@@ -1,0 +1,29 @@
+# LaTeX build artifacts
+# (Compiled paper PDFs are ignored — only sources are tracked. Other PDFs
+#  such as figures or referenced papers remain tracked.)
+main.pdf
+main.*.pdf
+*.gz
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.dvi
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.nav
+*.nlo
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.vrb
+*.xdv

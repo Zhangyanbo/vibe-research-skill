@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage{arxiv, times, natbib}
+\input{math_commands.tex}
+
+\usepackage{float}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\graphicspath{{figures/}}
+
+\newtheorem{theorem}{Theorem}
+
+\title{TITLE}
+
+\author{AUTHOR~$^{1}$\thanks{Author of correspondence: \texttt{email@example.com}}\\
+~$^1$ AFFILIATION\\
+}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/related}
+\input{sections/method}
+\input{sections/results}
+\input{sections/discussion}
+
+\bibliography{ref}
+\bibliographystyle{bibstyle}
+
+\input{sections/appendix}
+
+\end{document}

@@ -1,0 +1,66 @@
+\documentclass[UTF8]{ctexart}
+
+% Page geometry (from arxiv.sty, without loading it to avoid CJK conflicts)
+\usepackage[verbose=true,letterpaper]{geometry}
+\AtBeginDocument{
+  \newgeometry{
+    textheight=9in, textwidth=6.5in, top=1in,
+    headheight=14pt, headsep=25pt, footskip=30pt
+  }
+}
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\rhead{\scshape \footnotesize A Preprint}
+\cfoot{\thepage}
+
+\usepackage{natbib}
+\input{math_commands.tex}
+
+% Chinese cross-reference wording (math_commands.tex defines English ones)
+\def\eqref#1{式~(\ref{#1})}
+\def\Eqref#1{式~(\ref{#1})}
+\def\secref#1{第~\ref{#1}~节}
+\def\Secref#1{第~\ref{#1}~节}
+
+\usepackage{float}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\graphicspath{{figures/}}
+
+\newtheorem{theorem}{定理}
+
+\title{中文标题\\ \large ENGLISH TITLE}
+
+\author{AUTHOR~$^{1}$\thanks{Author of correspondence: \texttt{email@example.com}}\\
+~$^1$ AFFILIATION\\
+}
+
+\begin{document}
+
+\maketitle
+
+\input{sections_zh/abstract}
+\input{sections_zh/introduction}
+\input{sections_zh/related}
+\input{sections_zh/method}
+\input{sections_zh/results}
+\input{sections_zh/discussion}
+
+\bibliography{ref}
+\bibliographystyle{bibstyle}
+
+\input{sections_zh/appendix}
+
+\end{document}
