@@ -1,6 +1,6 @@
 # Vibe Research
 
-**版本 2.1.0 beta** · [English](README.md)
+**版本 2.2.0 beta** · [English](README.md)
 
 一套用 AI agent 做科学研究的 [Claude Code](https://claude.com/claude-code) skill。
 
@@ -46,6 +46,8 @@
 然后说一句类似 *「帮我 init 一个关于……的 vibe research 项目」*。agent 会问你研究问题、论文阅读语言、已有代码在哪，然后搭好项目。
 
 正式使用之前，打开 `skills/my-scientific-taste/SKILL.md`，把内容换成你自己的品味。那个文件本来就该是你的。
+
+装好之后，skill 会自己保持更新。每个 session 里 `vibe-research` 第一次加载时，会对着本仓库跑一次只读的版本检查；如果是 minor 或 patch 版本，它自动更新并告诉你改了什么。大版本更新、以及对 `my-scientific-taste` 的任何改动，都必须先问过你才会动。
 
 ## 许可
 

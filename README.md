@@ -1,6 +1,6 @@
 # Vibe Research
 
-**Version 2.1.0 beta** · [中文版](README.zh.md)
+**Version 2.2.0 beta** · [中文版](README.zh.md)
 
 A set of [Claude Code](https://claude.com/claude-code) skills for doing scientific research with AI agents.
 
@@ -46,6 +46,8 @@ Paste this to your agent (Claude Code or any coding agent):
 Then say something like *"init a vibe research project about ..."*. The agent will ask for your research question, your reading language for the paper, and where your existing code lives, then scaffold the project.
 
 Before using it for real, open `skills/my-scientific-taste/SKILL.md` and replace its contents with your own taste. That file is meant to be yours.
+
+Once installed, the skills keep themselves current. The first time `vibe-research` loads in a session it runs a read-only version check against this repo and, for a minor or patch release, updates itself and tells you what changed. A major release, or any change to `my-scientific-taste`, is never applied without asking you first.
 
 ## License
 

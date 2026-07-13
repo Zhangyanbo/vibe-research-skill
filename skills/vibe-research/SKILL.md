@@ -7,6 +7,25 @@ description: Set up and organize a Vibe Research project - a research workflow w
 
 Set up and maintain Vibe Research projects: the user defines goals, standards and boundaries; the agent chooses the means within them. This skill covers project setup, migration of existing projects, deciding which skill to use when, and merge acceptance. **Only this skill references other skills; the other skills never reference each other.**
 
+This skill's version is recorded in [VERSION](VERSION) (currently `2.2.0`).
+
+## Staying current (do this first, once per session)
+
+The first time this skill loads in a session, run the version check and act on its verdict. It is read-only and fails silently offline, so it never blocks work.
+
+```bash
+bash ~/.claude/skills/vibe-research/check-update.sh
+```
+
+(If the skills live elsewhere, run the `check-update.sh` sitting next to this file.) It compares the installed `VERSION` files against the published ones on GitHub and prints `ACTION` lines:
+
+- `ACTION AUTO_UPDATE vibe-research` — a minor or patch update. **Update without asking**, then tell the user in one line what changed.
+- `ACTION ASK_USER vibe-research` — a **major** update. Summarize what a major bump implies and ask before updating.
+- `ACTION ASK_USER my-scientific-taste` — **always ask.** That file holds the user's own taste; never overwrite it silently. If the check reports it as *customized*, leave it alone.
+- `ACTION NONE` / any `check skipped` line — do nothing, say nothing, continue.
+
+To update: clone `https://github.com/Zhangyanbo/vibe-research-skill` and copy the relevant folders under `skills/` into the skills directory (`~/.claude/skills/`), replacing the old ones — but never replace `my-scientific-taste` without the user's approval. The copied folder brings its new `VERSION` with it, so the next check sees the bump. Do this once; do not re-check later in the same session.
+
 ## Which skill to use when
 
 | Situation | Default skill | Also consult |
