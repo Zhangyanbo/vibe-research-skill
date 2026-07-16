@@ -1,6 +1,6 @@
 # Vibe Research
 
-**Version 2.2.0 beta** · [中文版](README.zh.md)
+**Version 2.3.0 beta** · [中文版](README.zh.md)
 
 A set of [Claude Code](https://claude.com/claude-code) skills for doing scientific research with AI agents.
 
@@ -24,14 +24,16 @@ It is built on one premise: **working with capable AI agents is a management pro
 
 ## The skills
 
-| Skill | What it does |
-|-------|--------------|
-| [`vibe-research`](skills/vibe-research/) | The core: project setup and migration, which skill to use when, merge acceptance. Ships the project template (a CLAUDE.md per directory). |
-| [`vibe-research-explore`](skills/vibe-research-explore/) | The exploration loop: branch, small fast experiments, figures at every step, honest reporting, direction decided by the human. |
-| [`vibe-research-optimize`](skills/vibe-research-optimize/) | Large-scale parameter search (Bayesian / evolutionary), with anti-metric-gaming safeguards: human-scored figures, mechanism-not-just-score reporting, strict isolation of sweeps from formal results. |
-| [`vibe-research-coding`](skills/vibe-research-coding/) | Research-code best practices: direct implementations, fail-fast, strict size limits, experiment/plotting separation. |
-| [`vibe-research-paper`](skills/vibe-research-paper/) | Paper standards and workflows: a bilingual arXiv LaTeX template, prose discipline, no meta-writing, verified citations, compile-before-report. |
-| [`my-scientific-taste`](skills/my-scientific-taste/) | A placeholder with a fixed name. Personal taste — the calls on which competent scientists disagree — lives here. Replace the contents with your own; the other skills consult it by name. |
+| Skill | Version | What it does |
+|-------|---------|--------------|
+| [`vibe-research`](skills/vibe-research/) | 2.3.0 | The core: project setup and migration, which skill to use when, merge acceptance. Ships the project template (a CLAUDE.md per directory). |
+| [`vibe-research-explore`](skills/vibe-research-explore/) | 2.3.0 | The exploration loop: branch, small fast experiments, figures at every step, honest reporting, direction decided by the human. |
+| [`vibe-research-optimize`](skills/vibe-research-optimize/) | 2.3.0 | Large-scale parameter search (Bayesian / evolutionary), with anti-metric-gaming safeguards: human-scored figures, mechanism-not-just-score reporting, strict isolation of sweeps from formal results. |
+| [`vibe-research-coding`](skills/vibe-research-coding/) | 2.3.0 | Research-code best practices: direct implementations, fail-fast, strict size limits, experiment/plotting separation. |
+| [`vibe-research-paper`](skills/vibe-research-paper/) | 2.3.0 | Paper standards and workflows: a bilingual arXiv LaTeX template, prose discipline, no meta-writing, verified citations, compile-before-report. |
+| [`my-scientific-taste`](skills/my-scientific-taste/) | 1.1.0 | A placeholder with a fixed name. Personal taste — the calls on which competent scientists disagree — lives here. Replace the contents with your own; the other skills consult it by name. |
+
+The `vibe-research*` skills release together and share one version number (`skills/vibe-research/VERSION`). `my-scientific-taste` is versioned separately (`skills/my-scientific-taste/VERSION`) and is never updated without asking you first.
 
 Plotting style lives in a separate skill, [nature-style](https://github.com/Zhangyanbo/nature-style-skill).
 
