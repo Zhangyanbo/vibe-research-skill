@@ -22,6 +22,15 @@ The workflow for exploratory experiments: the user gives the direction and the b
 5. **Report**: what changed, where the outputs are, what the figures show. Describe failed attempts too; deliver bad news plainly. A clear "this approach does not work, and here is the figure that shows it" is a complete result of exploration, not a failure to produce one.
 6. **Direction is the user's call.** Continue, pivot, or abandon is decided by the user, from the figures. Put everything needed for that judgment into the figures.
 
+## After a performance push, subtract
+
+Piling on tricks and new parts to chase performance is a legitimate exploration move. But the moment the gain lands, the next step is subtraction, not more addition:
+
+- **Test what can be removed.** Additions accumulate, yet usually only one of them carries the effect. Strip them back one at a time and delete everything that does not, as much as will go.
+- **Charge complexity as a cost.** Performance bought with complexity is not free: weigh the remaining gain against the machinery it needs, and say so in the report. A small win that requires heavy machinery is usually not worth keeping.
+
+The version worth reporting is the stripped-down one, with the performance–complexity trade-off stated.
+
 ## Pace and runtime discipline
 
 - **Facts that can be read directly from the code** (tensor shapes, receptive fields) are not measured by experiment. Save experiments for what cannot be known statically, such as training dynamics.

@@ -25,7 +25,9 @@ B. Multi-round loop:
 
 C. **When reporting the best result, explain why it is good**: show the mechanism with figures, not just the score. A good-looking result whose mechanism cannot be explained should be flagged as suspicious.
 
-D. If no setting in the space works well, say exactly that. "The search found nothing good" is a legitimate outcome of a search; dressing up the least-bad setting is not.
+D. **Subtract before reporting.** A winner found by search tends to carry every trick and component added along the way, while usually only one of them carries the effect. Test which additions actually matter and drop the rest, as much as will go. Then weigh what remains against its complexity — added complexity is itself a heavy cost, and a small metric gain often does not pay for it. Report the stripped-down version, with the performance–complexity trade-off stated.
+
+E. If no setting in the space works well, say exactly that. "The search found nothing good" is a legitimate outcome of a search; dressing up the least-bad setting is not.
 
 ## Isolation: keep the search fully separate from formal experiments
 
