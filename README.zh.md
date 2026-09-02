@@ -31,7 +31,7 @@
 | [`vibe-research-optimize`](skills/vibe-research-optimize/) | 2.4.0 | 大规模参数搜索（贝叶斯 / 演化），带防刷指标的护栏：图由人评分、汇报机制而不只是分数、搜索与正式结果严格隔离。 |
 | [`vibe-research-coding`](skills/vibe-research-coding/) | 2.4.0 | 科研代码最佳实践：直接的实现、fail-fast、严格的尺寸限制、实验与画图分离。 |
 | [`vibe-research-paper`](skills/vibe-research-paper/) | 2.4.0 | 论文规范与工作流：双语 arXiv LaTeX 模板、散文纪律、禁元写作、引用必须核实、编译通过才算完成。 |
-| [`my-scientific-taste`](skills/my-scientific-taste/) | 1.2.0 | 一个名字固定的占位符。个人品味——合格科学家之间真正有分歧的判断——住在这里。把内容换成你自己的；其他 skill 按这个名字来参考它。 |
+| [`my-scientific-taste`](skills/my-scientific-taste/) | 1.3.0 | 一个名字固定的占位符。个人品味——合格科学家之间真正有分歧的判断——住在这里。把内容换成你自己的；其他 skill 按这个名字来参考它。 |
 
 `vibe-research*` 系列一起发布，共用一个版本号（`skills/vibe-research/VERSION`）。`my-scientific-taste` 单独计版本（`skills/my-scientific-taste/VERSION`），而且任何更新都会先问过你。
 

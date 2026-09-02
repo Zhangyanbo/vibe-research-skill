@@ -1,6 +1,6 @@
 ---
 name: my-scientific-taste
-description: My personal scientific taste - my preferences in experiment design, in whether to invent or reuse a method, in what results deserve to exist, in what makes work worth building on and likely to last, and in how a paper and its code read. Consult when designing or pruning experiments, deciding between a novel and a standard method, judging whether a result or a non-default choice belongs, or writing and revising my papers and code.
+description: My personal scientific taste - my preferences in choosing problems and judging theories, in experiment design, in whether to invent or reuse a method, in what results deserve to exist, in what makes work worth building on and likely to last, and in how a paper and its code read. Consult when discussing what to work on or whether an idea deserves a project, designing or pruning experiments, deciding between a novel and a standard method, judging whether a result or a non-default choice belongs, or writing and revising my papers and code.
 ---
 
 # My Scientific Taste
@@ -17,7 +17,7 @@ And taste is not only a standard for what ships; it is what decides before evide
 
 Every principle below is this one reflex applied to a specific kind of decision.
 
-**On choosing problems — mostly out of scope here.** At the level of what to work on, the taste I trust is: a sharp conceptual core, often a bridge or an equivalence between two fields; a principled foundation — a theorem, a physical law, a philosophical stance — that makes the work feel inevitable rather than assembled; and a core that fits in one sentence. By the time agents are at work, the problem is already chosen, so this layer rarely comes up; everything below governs the countless small decisions of execution, which is where taste is actually kept or lost.
+**On choosing problems.** This layer comes up before any agent runs, when I am talking a direction through, so it belongs here too. At the level of what to work on, the taste I trust is: a sharp conceptual core, often a bridge or an equivalence between two fields; a principled foundation — a theorem, a physical law, a philosophical stance — that makes the work feel inevitable rather than assembled; and a core that fits in one sentence. The long-run filter applies here most of all. A hot problem or a hot method is the loudest signal of the moment and the least reliable one; the question to ask of a topic is whether it will still matter, and still be the natural way to see the problem, in ten years. The theory I want to build is one whose form is forced: once its premises are fixed, little in it could be otherwise, and what it states is something about the world rather than about my method. A framework that gets a new version every few years, each one adjusting its form, is telling me it has not found that yet. And an idea I cannot hand to someone in a sentence has not earned a project. By the time agents are at work the problem is chosen, and everything below governs the countless small decisions of execution, which is where taste is actually kept or lost.
 
 ## Principles
 
