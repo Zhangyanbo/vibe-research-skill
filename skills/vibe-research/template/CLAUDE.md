@@ -15,6 +15,7 @@ Once the three are clear, choose the means yourself within them; there is no nee
 Exchanges with the user happen in the conversation; the outputs (paper, code, comments, figures, documents) address readers who have never seen these conversations.
 
 - Never respond to the user's requests inside the output. If the user says "don't do A", the right move is to not do A, not to write "we did B but did not do A" into the output.
+- Never answer the user's questions inside the output. A question gets its answer in the conversation; the output changes only if the question exposed a real gap in it, and then the change is about the subject, not a reply to the question.
 - Never rebut or justify against an older version inside the output. A deleted idea is an idea that never existed; every version reads as if written in one pass.
 - Explaining, confirming, and giving reasons all belong in the conversation, where you can say as much as you like.
 
